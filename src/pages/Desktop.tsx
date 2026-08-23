@@ -235,14 +235,55 @@ export default function Desktop(props: MacActions) {
     });
   };
 
+  const [themePulse, setThemePulse] = useState<boolean>(false);
+  const firstRender = useRef<boolean>(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    setThemePulse(true);
+    const timer = setTimeout(() => setThemePulse(false), 1000);
+    return () => clearTimeout(timer);
+  }, [dark]);
+
   return (
-    <div
-      className="size-full overflow-hidden bg-center bg-cover"
-      style={{
-        backgroundImage: `url(${dark ? wallpapers.night : wallpapers.day})`,
-        filter: `brightness( ${(brightness as number) * 0.7 + 50}% )`
-      }}
-    >
+    <div className="relative size-full overflow-hidden select-none bg-black">
+      {/* Light Theme Wallpaper Layer (Killmonger) */}
+      <div
+        className="wallpaper-layer"
+        style={{
+          backgroundImage: `url(${wallpapers.day})`,
+          opacity: dark ? 0 : 1,
+          transform: dark ? "scale(1.05) translateZ(0)" : "scale(1) translateZ(0)",
+          filter: `brightness(${(brightness as number) * 0.7 + 50}%) ${dark ? "blur(3px)" : "blur(0px)"}`
+        }}
+      />
+
+      {/* Dark Theme Wallpaper Layer (Black Panther) */}
+      <div
+        className="wallpaper-layer"
+        style={{
+          backgroundImage: `url(${wallpapers.night})`,
+          opacity: dark ? 1 : 0,
+          transform: dark ? "scale(1) translateZ(0)" : "scale(0.95) translateZ(0)",
+          filter: `brightness(${(brightness as number) * 0.7 + 50}%) ${dark ? "blur(0px)" : "blur(3px)"}`
+        }}
+      />
+
+      {/* Kinetic Shockwave Ripple on Theme Switch */}
+      {themePulse && (
+        <div
+          className={`pointer-events-none absolute inset-0 theme-shockwave ${
+            dark
+              ? "bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/30 via-indigo-600/15 to-transparent"
+              : "bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-400/30 via-orange-500/15 to-transparent"
+          }`}
+          style={{ mixBlendMode: "screen" }}
+        />
+      )}
+
       {/* Top Menu Bar */}
       <TopBar
         title={state.currentTitle}
