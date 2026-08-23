@@ -1,28 +1,41 @@
 # 🛡️ NBFC Loan Stacking Fraud Detection System (LoanFlow)
 
-A privacy-preserving, decentralized fraud detection system that prevents concurrent predatory multi-loan applications (loan stacking) across non-banking financial companies (NBFCs).
+[![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-YCCE__Team__NXT__LVL-181717?style=for-the-badge&logo=github)](https://github.com/prajyot1093/YCCE_Team_NXT_LVL)
+[![Tech](https://img.shields.io/badge/Tech-React_%7C_Django_%7C_Solidity_%7C_ML-61DAFB?style=for-the-badge)](https://github.com/prajyot1093/YCCE_Team_NXT_LVL)
+
+> A privacy-preserving cross-institutional financial fraud detection platform that prevents predatory loan stacking across Non-Banking Financial Companies (NBFCs) using **Private Set Intersection (PSI)**, **Federated Machine Learning**, and **Solidity Smart Contracts**.
 
 ---
 
-## 🌟 Key Architecture & Highlights
+## 🌟 Architectural Innovations
 
-- **Privacy-Preserving Computation**: Employs **Private Set Intersection (PSI)** protocols so competing lenders can cross-verify applicant loan requests without exposing raw customer identity data or proprietary records.
-- **Federated Machine Learning**: Trains risk evaluation models in a distributed fashion across nodes without centralizing raw borrower data.
-- **Blockchain Audit Trail**: Implements **Solidity Smart Contracts** deployed on Ethereum/Sepolia to store tamper-proof cryptographic audit receipts of verified fraud occurrences.
-- **Role-Based Portal**: Multi-tier dashboard designed for Applicants, Lenders/Banks, and System Regulators.
+### 1. 🔐 Private Set Intersection (PSI)
+- Allows participating NBFCs to discover cross-institutional duplicate loan applications in real-time **without** exposing un-consented borrower PII or customer databases to competitors.
+
+### 2. 🧠 Federated Risk Modeling
+- Trains anomaly and fraud risk scoring models in a distributed fashion, keeping sensitive borrower financial history localized on edge nodes.
+
+### 3. ⛓️ Immutable Ethereum Audit Trail
+- Stores cryptographic hashes of verified fraud flags and audit timestamps directly on Ethereum / Sepolia smart contracts, ensuring tamper-proof audit trails for financial regulators.
+
+### 4. 👥 Multi-Role Dashboard
+- **Applicant Portal**: Submit loan requests and track verification progress transparently.
+- **Bank / Underwriter Portal**: Review risk scores and flag duplicate applications.
+- **Regulatory Admin Portal**: High-level telemetry and network-wide compliance monitoring.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js, Vite, Tailwind CSS, Axios, React Router
-- **Backend**: Django, Django REST Framework, Python
-- **Smart Contracts / Web3**: Solidity, Ethereum Sepolia Testnet, Web3 / Ethers.js
-- **Machine Learning**: Federated Learning, Scikit-learn, PSI Algorithms
-- **Databases**: SQLite (Auth) & MongoDB (Loan Application Records)
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend** | React.js, Vite, Tailwind CSS, Axios, React Router |
+| **Backend & APIs** | Django REST Framework, Python 3.10+ |
+| **Smart Contracts** | Solidity, Ethereum Sepolia Testnet, Remix IDE, Ethers.js |
+| **Machine Learning** | Scikit-learn, Federated Learning, Cryptographic PSI |
+| **Databases** | MongoDB (Applications) & SQLite (Authentication) |
 
 ---
 
-## 🔗 Links
-
-- **GitHub Repository**: [github.com/prajyot1093/YCCE_Team_NXT_LVL](https://github.com/prajyot1093/YCCE_Team_NXT_LVL)
+## 🔗 Project Link
+- 📂 **GitHub Repository**: [https://github.com/prajyot1093/YCCE_Team_NXT_LVL](https://github.com/prajyot1093/YCCE_Team_NXT_LVL)

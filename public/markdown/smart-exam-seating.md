@@ -1,29 +1,35 @@
 # 🪑 Smart Exam Seating Arrangement System
 
-An intelligent seating allocation platform that automates the generation of conflict-free examination seating plans using **Greedy and Backtracking algorithms**.
+[![Live App](https://img.shields.io/badge/Live_Demo-Streamlit_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://project-yjq9xtpcxg2ncesscprtgw.streamlit.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-Smart--Exam--Seating-181717?style=for-the-badge&logo=github)](https://github.com/prajyot1093/Smart-Exam-Seating-Arrangement-System)
+
+> An intelligent examination seat allocation and constraint satisfaction system that automates the generation of conflict-free seating plans for academic institutions using **Greedy and Backtracking algorithms**.
 
 ---
 
 ## 🌟 Key Highlights & Features
 
-- **Algorithmic Optimization**: Uses combinatorial backtracking and greedy heuristics to allocate seats without adjacent branch conflicts.
-- **Batch-Wise Constraint Validation**: Supports multi-department, multi-year, and custom exam batch rules seamlessly.
-- **CSV & Excel Support**: Easy upload of student rosters and room layout configurations.
-- **Visual Classroom Grid**: Interactive seating layout preview rendered with Streamlit.
-- **One-Click Export**: Instant PDF and CSV generation for invigilation staff and notice boards.
+- 🧠 **Combinatorial Backtracking**: Eliminates cheating vectors by ensuring adjacent seats belong to distinct academic branches/years.
+- ⚡ **Greedy Constraint Satisfaction**: Maximizes hall capacity utilization while satisfying room geometry and distancing rules.
+- 📁 **CSV / Excel Roster Support**: Flexible batch ingestion of student lists, roll numbers, and classroom dimension matrices.
+- 📊 **Visual Classroom Grid Preview**: Interactive real-time matrix layout visualization generated via Streamlit.
+- 🖨️ **Automated Report Export**: Instant generation of invigilator duty sheets and notice-board seating charts in CSV/PDF format.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Methods
 
-- **Language**: Python
-- **UI Framework**: Streamlit
-- **Data Processing**: Pandas, NumPy
-- **Algorithms**: Backtracking, Greedy Optimization, Constraint Satisfaction
+| Component | Technology |
+| :--- | :--- |
+| **Language** | Python 3.10+ |
+| **User Interface** | Streamlit |
+| **Data Manipulation** | Pandas, NumPy |
+| **Algorithmic Core** | Backtracking with Forward Checking, Greedy Heuristics |
+| **Deployment** | Streamlit Cloud Community |
 
 ---
 
-## 🔗 Links
+## 🔗 Project Links
 
-- **GitHub Repository**: [github.com/prajyot1093/Smart-Exam-Seating-Arrangement-System](https://github.com/prajyot1093/Smart-Exam-Seating-Arrangement-System)
-- **Live Interactive Demo**: [project-yjq9xtpcxg2ncesscprtgw.streamlit.app](https://project-yjq9xtpcxg2ncesscprtgw.streamlit.app/)
+- 🚀 **Live Interactive App**: [https://project-yjq9xtpcxg2ncesscprtgw.streamlit.app/](https://project-yjq9xtpcxg2ncesscprtgw.streamlit.app/)
+- 📂 **GitHub Repository**: [https://github.com/prajyot1093/Smart-Exam-Seating-Arrangement-System](https://github.com/prajyot1093/Smart-Exam-Seating-Arrangement-System)

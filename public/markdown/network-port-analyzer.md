@@ -1,28 +1,33 @@
 # 🔍 Network Port Analyzer (Nmap GUI)
 
-A lightweight, automated network reconnaissance and vulnerability detection tool created during the **VOIS (Vodafone Intelligent Solutions)** Cyber Security internship.
+[![Live App](https://img.shields.io/badge/Live_Demo-Nmap_GUI-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://nmapgui-znrll2xgrrymmx5cbwwoag.streamlit.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-nmap__gui-181717?style=for-the-badge&logo=github)](https://github.com/prajyot1093/nmap_gui)
+
+> A graphical network security scanner and automated reconnaissance tool developed during the **VOIS (Vodafone Intelligent Solutions)** Cyber Security internship, powered by **Python, Nmap, and Streamlit**.
 
 ---
 
-## 🌟 Key Features
+## 🌟 Capabilities & Security Features
 
-- **Automated Port Scanning**: Rapidly discovers open TCP/UDP ports across single targets or IP subnets.
-- **Service & Version Fingerprinting**: Identifies running network daemon versions to pinpoint vulnerable services.
-- **Structured Assessment Reports**: Formats raw Nmap scan telemetry into structured security assessment tables and summary dashboards.
-- **Web-Based Interface**: Interactive Streamlit GUI allowing security analysts to conduct scans without memorizing CLI flags.
-
----
-
-## 🛠️ Tech Stack
-
-- **Language**: Python
-- **Core Engine**: Nmap (Network Mapper)
-- **UI Framework**: Streamlit
-- **Protocols & Domains**: TCP/IP, Port Scanning, Service Enumeration, Network Reconnaissance
+- 🎯 **Automated Host & Port Discovery**: Fast TCP SYN scanning, UDP scanning, and CIDR subnet sweeps.
+- 🏷️ **Service & Banner Fingerprinting**: Detects running service names, versions, and underlying OS fingerprints to pinpoint vulnerable daemons.
+- 📋 **Structured Assessment Reports**: Converts raw terminal output from Nmap into structured risk assessment tables, charts, and downloadable summaries.
+- 🖥️ **Analyst-Friendly GUI**: Eliminates the barrier of complex CLI flags with intuitive web-based scan parameter controls.
 
 ---
 
-## 🔗 Links
+## 🛠️ Tech Stack & Security Tools
 
-- **GitHub Repository**: [github.com/prajyot1093/nmap_gui](https://github.com/prajyot1093/nmap_gui)
-- **Live Demo**: [nmapgui-znrll2xgrrymmx5cbwwoag.streamlit.app](https://nmapgui-znrll2xgrrymmx5cbwwoag.streamlit.app/)
+| Layer | Tools & Protocols |
+| :--- | :--- |
+| **Engine** | Nmap (Network Mapper) |
+| **Frontend & UI** | Streamlit, Python 3.10+ |
+| **Networking & Protocols** | TCP/IP, UDP, ICMP, DNS, Port Scanning, Network Reconnaissance |
+| **Deployment** | Streamlit Cloud |
+
+---
+
+## 🔗 Try It Out
+
+- 🚀 **Live Demo**: [https://nmapgui-znrll2xgrrymmx5cbwwoag.streamlit.app/](https://nmapgui-znrll2xgrrymmx5cbwwoag.streamlit.app/)
+- 📂 **GitHub Repository**: [https://github.com/prajyot1093/nmap_gui](https://github.com/prajyot1093/nmap_gui)

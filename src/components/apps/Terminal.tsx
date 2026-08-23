@@ -105,14 +105,44 @@ export default class Terminal extends React.Component<{}, TerminalState> {
       ls: this.ls,
       cat: this.cat,
       clear: this.clear,
-      help: this.help
+      help: this.help,
+      whoami: this.whoami,
+      skills: this.skills,
+      projects: this.projects,
+      contact: this.contact
     };
   }
 
   componentDidMount() {
     this.reset();
+    const banner = (
+      <div key="terminal-welcome-banner" className="pb-2 text-xs font-mono text-gray-300">
+        <div className="text-cyan-400 font-bold"> Prajyot Punde macOS Terminal v2.4 (Darwin x86_64)</div>
+        <div className="text-gray-400">Type <span className="text-yellow-300">help</span> for commands, or <span className="text-yellow-300">ls</span> to explore files.</div>
+      </div>
+    );
+    this.addRow(banner);
     this.generateInputRow(this.curInputTimes);
   }
+
+  whoami = () => {
+    this.generateResultRow(
+      this.curInputTimes,
+      <div className="text-yellow-300">Prajyot Punde - CSE Undergrad @ YCCE Nagpur | Full-Stack & Web3 Developer</div>
+    );
+  };
+
+  skills = () => {
+    this.cat("skills.txt");
+  };
+
+  projects = () => {
+    this.cat("projects.txt");
+  };
+
+  contact = () => {
+    this.cat("contact.txt");
+  };
 
   reset = () => {
     const terminal = document.querySelector("#terminal-content") as HTMLElement;
@@ -180,7 +210,7 @@ export default class Terminal extends React.Component<{}, TerminalState> {
       result.push(
         <span
           key={`terminal-result-ls-${this.curInputTimes}-${item.id}`}
-          className={`${item.type === "file" ? "text-white" : "text-purple-300"}`}
+          className={`${item.type === "file" ? "text-white" : "text-purple-300 font-semibold"}`}
         >
           {item.title}
         </span>
@@ -216,33 +246,30 @@ export default class Terminal extends React.Component<{}, TerminalState> {
 
   help = () => {
     const help = (
-      <ul className="list-disc ml-6 pb-1.5">
+      <ul className="list-disc ml-6 pb-1.5 space-y-0.5">
         <li>
           <span text-red-400>cat {"<file>"}</span> - See the content of {"<file>"}
         </li>
         <li>
-          <span text-red-400>cd {"<dir>"}</span> - Move into
-          {" <dir>"}, "cd .." to move to the parent directory, "cd" or "cd ~" to return to
-          root
+          <span text-red-400>cd {"<dir>"}</span> - Move into directory
         </li>
         <li>
-          <span text-red-400>ls</span> - See files and directories in the current
-          directory
+          <span text-red-400>ls</span> - List files and directories
         </li>
         <li>
-          <span text-red-400>clear</span> - Clear the screen
+          <span text-red-400>whoami</span> - Display author profile
         </li>
         <li>
-          <span text-red-400>help</span> - Display this help menu
+          <span text-red-400>skills</span> - Quick view of technical skills
         </li>
         <li>
-          <span text-red-400>rm -rf /</span> - :)
+          <span text-red-400>projects</span> - Quick view of featured projects
         </li>
         <li>
-          press <span text-red-400>up arrow / down arrow</span> - Select history commands
+          <span text-red-400>contact</span> - Get in touch with Prajyot
         </li>
         <li>
-          press <span text-red-400>tab</span> - Auto complete
+          <span text-red-400>clear</span> - Clear the terminal
         </li>
       </ul>
     );

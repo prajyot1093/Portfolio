@@ -1,46 +1,51 @@
 # 💬 Nano-Chat: Real-Time Messaging App
 
-A modern, full-stack real-time communication platform built on the **MERN Stack** and powered by **Socket.IO**, engineered for low-latency messaging, media streaming, and dynamic UI personalization.
+[![Live App](https://img.shields.io/badge/Live_Demo-nano--chat--1.onrender.com-00C7B7?style=for-the-badge&logo=render&logoColor=white)](https://nano-chat-1.onrender.com/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub_Repo-prajyot1093%2FNano--Chat-181717?style=for-the-badge&logo=github)](https://github.com/prajyot1093/Nano-Chat)
+
+> A modern, full-stack real-time messaging application engineered with the **MERN Stack** and **Socket.IO** for low-latency bidirectional chat, secure authentication, profile personalization, and media sharing.
 
 ---
 
-## 🚀 Live Demo
-🔗 **Visit App**: [nano-chat-1.onrender.com](https://nano-chat-1.onrender.com/)
+## 🌟 Key Features
+
+- ⚡ **Real-Time Communication**: Persistent WebSocket connection via Socket.IO for instant message delivery and typing feedback.
+- 🔐 **Robust Security**: JSON Web Token (JWT) auth stored in HTTP-Only cookies with Bcrypt password hashing.
+- 🟢 **Live Online Status**: Dynamic user presence tracker showing online/offline members in real-time.
+- 🖼️ **Image & Media Upload**: Integrated Cloudinary API for high-speed image uploads and cloud optimization.
+- 🎨 **32 DaisyUI Themes**: Instant theme switching allowing users to personalize their UI (synthwave, cyberpunk, retro, dark, light, etc.).
+- 📱 **Mobile & Desktop Responsive**: Clean responsive layout built using Tailwind CSS.
+- 🗂️ **Global State**: Client-side state managed seamlessly with Zustand.
 
 ---
 
-## ✨ Features
+## 🛠️ Tech Stack & Architecture
 
-- **⚡ Real-Time Messaging**: Low-latency bidirectional messaging via WebSockets and Socket.IO.
-- **🔐 Secure Authentication**: JWT authentication with HTTP-only cookie-based session management and Bcrypt password hashing.
-- **🟢 Live Presence**: Real-time online/offline indicators for all active users.
-- **📷 Media Sharing**: Seamless image uploads powered by Cloudinary CDN integration.
-- **🎨 32 DaisyUI Themes**: Instant theme switching for personalized dark/light/retro modes.
-- **📱 Fully Responsive**: Fluid UX across mobile, tablet, and ultra-wide screens.
-- **🗂️ Global State Management**: Reactive client state handled with Zustand.
+```
+Nano-Chat/
+├── backend/
+│   ├── src/controllers/ (Auth, Message, User)
+│   ├── src/middleware/  (JWT Protection)
+│   ├── src/models/      (User, Message Schema via Mongoose)
+│   ├── src/routes/      (Auth, Messages, Users)
+│   └── src/socket.io.js (WebSocket event handlers)
+└── frontend/
+    ├── src/components/  (ChatContainer, MessageInput, Sidebar, Navbar)
+    ├── src/pages/       (Home, Login, SignUp, Profile, Settings)
+    └── src/store/       (useAuthStore, useChatStore, useThemeStore)
+```
 
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- **React.js & Vite**
-- **Tailwind CSS & DaisyUI**
-- **Zustand**
-- **Axios & React Router DOM**
-- **Socket.IO Client**
-- **Lucide Icons & React Hot Toast**
-
-### Backend
-- **Node.js & Express.js**
-- **MongoDB & Mongoose ODM**
-- **Socket.IO Server**
-- **JWT & BcryptJS**
-- **Cloudinary SDK**
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend** | React 18, Vite, Tailwind CSS, DaisyUI, Zustand, Axios, React Hot Toast, Lucide Icons |
+| **Backend** | Node.js, Express.js, Socket.IO, JWT, BcryptJS, Cookie-Parser, CORS |
+| **Database** | MongoDB Atlas, Mongoose ODM |
+| **Storage & Cloud** | Cloudinary CDN |
+| **Hosting** | Render Cloud Platform |
 
 ---
 
-## 🔗 Links
+## 🔗 Try It Out
 
-- **GitHub Repository**: [github.com/prajyot1093/Nano-Chat](https://github.com/prajyot1093/Nano-Chat)
-- **Live Deployment**: [nano-chat-1.onrender.com](https://nano-chat-1.onrender.com/)
+- 🚀 **Live Demo**: [https://nano-chat-1.onrender.com/](https://nano-chat-1.onrender.com/)
+- 📂 **Source Code**: [https://github.com/prajyot1093/Nano-Chat](https://github.com/prajyot1093/Nano-Chat)
