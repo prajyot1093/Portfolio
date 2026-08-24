@@ -11,6 +11,7 @@ interface TopBarItemProps {
   className?: string;
   onClick?: () => void;
   onMouseEnter?: () => void;
+  title?: string;
 }
 
 const TopBarItem = forwardRef(
@@ -23,6 +24,7 @@ const TopBarItem = forwardRef(
     return (
       <div
         ref={ref}
+        title={props.title}
         className={`hstack space-x-1 h-6 px-1 cursor-default rounded ${hide} ${bg} ${
           props.className || ""
         }`}
@@ -216,6 +218,21 @@ const TopBar = (props: TopBarProps) => {
         <TopBarItem ref={spotlightBtnRef} onClick={props.toggleSpotlight}>
           <span className="i-bx:search text-[17px]" />
         </TopBarItem>
+        {/* Audio Playing Indicator in TopBar */}
+        {audioState.playing && (
+          <TopBarItem
+            className="cursor-pointer text-blue-400 hover:text-blue-300"
+            onClick={toggleControlCenter}
+            title={`Now Playing: ${audioState.currentTrack?.title} - ${audioState.currentTrack?.artist}`}
+          >
+            <div className="flex items-end space-x-0.5 h-3 px-0.5">
+              <span className="w-0.5 bg-current rounded-full eq-bar-1" />
+              <span className="w-0.5 bg-current rounded-full eq-bar-2" />
+              <span className="w-0.5 bg-current rounded-full eq-bar-3" />
+            </div>
+          </TopBarItem>
+        )}
+
         <TopBarItem
           forceHover={state.showControlCenter}
           onClick={toggleControlCenter}
@@ -234,6 +251,16 @@ const TopBar = (props: TopBarProps) => {
           <ControlCenterMenu
             playing={audioState.playing}
             toggleAudio={controls.toggle}
+            nextTrack={controls.next}
+            prevTrack={controls.prev}
+            selectTrack={controls.selectTrack}
+            currentTrack={audioState.currentTrack}
+            currentTrackIndex={audioState.currentTrackIndex}
+            playlist={audioState.playlist}
+            progress={audioState.progress}
+            currentTime={audioState.currentTime}
+            duration={audioState.duration}
+            seekAudio={controls.seek}
             setVolume={setAudioVolume}
             setBrightness={setSiteBrightness}
             toggleControlCenter={toggleControlCenter}
